@@ -1,0 +1,520 @@
+:root {
+  color-scheme: dark;
+  --bg: #0f1115;
+  --bg-alt: #151821;
+  --card: #1b1f2a;
+  --accent: #e10600;
+  --accent-soft: rgba(225, 6, 0, 0.15);
+  --green: #25d366;
+  --text: #f4f4f6;
+  --text-muted: #a6adbb;
+  --shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+  --radius: 18px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  scroll-behavior: smooth;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.section {
+  padding: 32px 20px;
+}
+
+.section-header {
+  margin-bottom: 20px;
+}
+
+.section-header h2 {
+  font-size: 1.6rem;
+  margin-bottom: 6px;
+}
+
+.section-header p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.hero {
+  min-height: 100vh;
+  background: radial-gradient(circle at top, rgba(225, 6, 0, 0.2), transparent 60%),
+    linear-gradient(140deg, #0f1115 0%, #121520 45%, #151a26 100%);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand {
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.menu-button {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 999px;
+  width: 44px;
+  height: 36px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+}
+
+.menu-button span {
+  width: 18px;
+  height: 2px;
+  background: var(--text);
+}
+
+.hero-content {
+  margin-top: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.eyebrow {
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.75rem;
+}
+
+.hero h1 {
+  font-size: 2.4rem;
+  font-weight: 700;
+}
+
+.tagline {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+}
+
+.hero-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.hero-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 18px;
+  border-radius: 999px;
+  font-weight: 600;
+  border: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+}
+
+.btn.primary {
+  background: var(--accent);
+  color: white;
+  box-shadow: 0 10px 20px rgba(225, 6, 0, 0.25);
+}
+
+.btn.secondary {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.btn.whatsapp {
+  background: var(--green);
+  color: #0f1115;
+}
+
+.btn.ghost {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: var(--text);
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.card-row {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 80%;
+  gap: 16px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+  scroll-snap-type: x mandatory;
+}
+
+.card-row::-webkit-scrollbar {
+  height: 6px;
+}
+
+.card-row::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 999px;
+}
+
+.service-card {
+  background: var(--card);
+  padding: 20px;
+  border-radius: var(--radius);
+  scroll-snap-align: start;
+  box-shadow: var(--shadow);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-4px);
+}
+
+.service-card .icon {
+  font-size: 1.6rem;
+  margin-bottom: 10px;
+}
+
+.service-card h3 {
+  margin-bottom: 6px;
+  font-size: 1.1rem;
+}
+
+.service-card p {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.service-card.highlight {
+  border: 1px solid var(--accent);
+  position: relative;
+}
+
+.badge {
+  position: absolute;
+  top: 14px;
+  right: 16px;
+  background: var(--accent);
+  color: white;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 0.7rem;
+}
+
+.form-card {
+  background: var(--card);
+  padding: 20px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.form-grid {
+  display: grid;
+  gap: 16px;
+}
+
+label {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  display: grid;
+  gap: 6px;
+}
+
+input,
+select {
+  background: var(--bg-alt);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 12px;
+  color: var(--text);
+}
+
+.form-actions {
+  display: grid;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.grid-2 {
+  display: grid;
+  gap: 16px;
+}
+
+.feature-card {
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 18px;
+  box-shadow: var(--shadow);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.feature-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.gallery-item {
+  border: none;
+  background: transparent;
+  position: relative;
+  overflow: hidden;
+  border-radius: 14px;
+  cursor: pointer;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 14px;
+  transition: transform 0.3s ease;
+}
+
+.gallery-item span {
+  position: absolute;
+  bottom: 8px;
+  left: 8px;
+  background: rgba(15, 17, 21, 0.8);
+  padding: 4px 8px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+}
+
+.gallery-item:active img {
+  transform: scale(1.03);
+}
+
+.review-card {
+  background: var(--card);
+  padding: 20px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  display: grid;
+  gap: 12px;
+}
+
+.stars {
+  color: #f6c445;
+  font-size: 1.2rem;
+}
+
+.reminder-card {
+  background: linear-gradient(135deg, rgba(225, 6, 0, 0.18), rgba(21, 24, 33, 0.7));
+  border-radius: var(--radius);
+  padding: 22px;
+  display: grid;
+  gap: 12px;
+}
+
+.reminder-form {
+  display: grid;
+  gap: 10px;
+}
+
+.note {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.blog-list {
+  display: grid;
+  gap: 12px;
+}
+
+.blog-card {
+  background: var(--card);
+  padding: 18px;
+  border-radius: var(--radius);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.blog-card p {
+  color: var(--text-muted);
+  margin-top: 6px;
+}
+
+.insta-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.insta-tile {
+  background: var(--card);
+  border-radius: 12px;
+  padding: 18px 0;
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+.contact-card {
+  background: var(--card);
+  padding: 20px;
+  border-radius: var(--radius);
+  display: grid;
+  gap: 12px;
+}
+
+.map-placeholder {
+  background: var(--bg-alt);
+  border-radius: 12px;
+  padding: 24px;
+  text-align: center;
+  color: var(--text-muted);
+}
+
+.contact-actions {
+  display: grid;
+  gap: 10px;
+}
+
+.floating-actions {
+  position: fixed;
+  bottom: 20px;
+  right: 16px;
+  display: grid;
+  gap: 10px;
+  z-index: 10;
+}
+
+.fab {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 1.2rem;
+  box-shadow: var(--shadow);
+}
+
+.fab.call {
+  background: var(--accent);
+  color: white;
+}
+
+.fab.whatsapp {
+  background: var(--green);
+  color: #0f1115;
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 20;
+  padding: 20px;
+}
+
+.modal.open {
+  display: flex;
+}
+
+.modal img {
+  max-height: 80vh;
+  border-radius: var(--radius);
+}
+
+.modal-close {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  color: white;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  font-size: 1.1rem;
+}
+
+.fade-in {
+  animation: fadeIn 1s ease both;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (min-width: 768px) {
+  .hero {
+    padding: 40px 80px;
+  }
+
+  .hero-actions {
+    flex-direction: row;
+  }
+
+  .card-row {
+    grid-auto-columns: 40%;
+  }
+
+  .form-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .form-actions {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .blog-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .contact-actions {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
